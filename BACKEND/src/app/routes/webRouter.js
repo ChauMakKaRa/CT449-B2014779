@@ -12,7 +12,8 @@ const {
     deleteCart,
     ordered,
     getordered,
-    getProductId
+    getProductId,
+    
     } = require('../controllers/web/product_ctrl');
 
 routerUser.route('/').get(getProduct).post(addProduct);

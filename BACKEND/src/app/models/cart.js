@@ -7,11 +7,6 @@ const CartSchema = new Schema({
     ref: "User",
     required: true
   },
-  // product: {
-  //   type: Object,
-  //   ref: "Product",
-  //   required: true
-  // },
   listProduct: [
     {
       product: {

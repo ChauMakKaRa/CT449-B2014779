@@ -200,6 +200,15 @@ const getProductId = async (req, res, next) => {
         .then(products => res.json(products))
         .catch(next);
 }
+const search = async (req, res, next) => {
+    const search = req.body;
+    const key = JSON.stringify(search);
+    if(key) {
+        Products.find({ $text: { $search: key}})
+            .then(products => res.json(products))
+            .catch(next);
+    }
+}
 module.exports = {
     addCart,
     getProduct,
@@ -213,5 +222,6 @@ module.exports = {
     ordered,
     getordered,
     getProductId,
+    search,
 };
 // module.exports = new ProductController;
